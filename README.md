@@ -38,7 +38,7 @@ badbyte --help
 badbyte g --bad "3d 26 25 0d" --pre START --post STOP
 ```
 
-![logo](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/usage.png)
+![generate-payloag](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/usage.png)
 
 use:
 * --bad to supply hexascii values of bad characters
@@ -51,11 +51,11 @@ Then use payload in your exploit and fire it.
 
 Copy hexascii from memory dump of your favourite debugger i.e. windbg:
 
-![logo](https://github.com/C3l1n/badbyte/blob/main/assets/windbg.png)
+![dump-copy](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/windbg.png)
 
 remember to skip addresses and ascii representation. I use vim and column select or visual studio code and alt+shift select.
 
-![logo](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/vscode.png)
+![select-hexdump](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/vscode.png)
 
 Fire badbyte to analyze output:
 
@@ -63,7 +63,7 @@ Fire badbyte to analyze output:
 badbyte p -c --pre START --post STOP
 ```
 
-![logo](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/analyze.png)
+![analyze](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/analyze.png)
 
 ## [↑](#table-of-contents)Programatically use
 
