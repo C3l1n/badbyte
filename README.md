@@ -1,10 +1,17 @@
 # badbyte
-
 ![logo](assets/logo.png)
 
 Deal with bad characters easily during exploit writing with badchars.
 
-## Instalation
+## Table of Contents
+
+1. [Installation](#Instalation)
+2. [Usage](#Usage)
+   * [Generate payload to check all characters](#Generate-payload-to-check-all-characters)
+   * [Analyze memory dumped after trigger](#Analyze-memory-dumped-after-trigger)
+3. [Programatically use](#Programatically-use)
+
+## [↑](#table-of-contents) Instalation
 
 using pip:
 ```bash
@@ -18,14 +25,14 @@ cd badbyte
 pip3 install .
 ```
 
-## Usage
+## [↑](#table-of-contents) Usage
 
 You can always use:
 ```bash
 badbyte --help
 ```
 
-### Generate payload to check all characters
+### [↑](#table-of-contents) Generate payload to check all characters
 
 ```bash
 badbyte g --bad "3d 26 25 0d" --pre START --post STOP
@@ -40,7 +47,7 @@ use:
 
 Then use payload in your exploit and fire it.
 
-### Analyze memory dumped after trigger
+### [↑](#table-of-contents) Analyze memory dumped after trigger
 
 Copy hexascii from memory dump of your favourite debugger i.e. windbg:
 
@@ -57,3 +64,7 @@ badbyte p -c --pre START --post STOP
 ```
 
 ![logo](assets/analyze.png)
+
+## Programatically use
+
+Documentation not made (feel free to read code) but you can find in example/programatically_generate_payload.py example of payload generation in exploit.
