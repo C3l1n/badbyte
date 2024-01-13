@@ -3,3 +3,5 @@ __pycache__
 .idea
 build
 badbyte.egg-info/
+dist
+release.sh
