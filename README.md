@@ -7,6 +7,8 @@ Deal with bad characters easily during exploit writing with badchars.
 
 1. [Installation](#Instalation)
 2. [Usage](#Usage)
+   * [Cyclic pattern generate](#Cyclic-pattern-generate)
+   * [Search for offset in cyclic pattern](#Search-for-offset-in-cyclic-pattern)
    * [Generate payload to check all characters](#Generate-payload-to-check-all-characters)
    * [Analyze memory dumped after trigger](#Analyze-memory-dumped-after-trigger)
 3. [Programatically use](#Programatically-use)
@@ -32,6 +34,27 @@ You can always use:
 badbyte --help
 ```
 
+### [↑](#table-of-contents)Cyclic pattern generate
+
+It is useful to search for offset at which you should put your
+sniper shot constants. For example return address: you generate 
+pattern with this function, trigger vulnerability  with
+generated payload. EIP value (remember about little ending in x86)
+has uniq part of pattern and offset of that part could be calculated
+with badbyte parse (see next chapter).
+
+```bash
+badbyte c -u 4 -l 100 --bad "61 62"
+```
+![cyclegenerate]()
+
+### [↑](#table-of-contents)Search for offset in cyclic pattern
+
+Search for offset of provided part in --pattern argument.
+```
+badbyte o -u 4 -l 100 --bad "61 62" -p cocc
+```
+![cyclesearch]()
 ### [↑](#table-of-contents)Generate payload to check all characters
 
 ```bash

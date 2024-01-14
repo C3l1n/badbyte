@@ -2,6 +2,7 @@ import binascii
 import sys
 from badbyte.utils.colors import RED, ORANGE, GREEN, RST
 from typing import List
+import string
 def char_to_int(c):
     if type(c) == str:
         return ord(c)
@@ -101,3 +102,11 @@ def analyze(hexdump: str, prefix: bytes, postfix: bytes, payload: bytes):
     {GREEN}{colored_modification}{RST}{RED}{str(hexdump_cpy[idx:])[2:-1]}{RST}
 
     """)
+
+
+def get_cyclic_alphabet(bad):
+    alphabet = string.ascii_lowercase + string.ascii_uppercase + string.digits
+    for b in unhexify(bad):
+        alphabet = alphabet.replace(chr(b), "")
+    return alphabet
+

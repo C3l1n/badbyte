@@ -20,6 +20,7 @@ setup(
     },
     url='https://github.com/C3l1n/badbyte',
     install_requires=[
+        'pwnlib'
     ],
     license='MIT',
     scripts=[
