@@ -46,7 +46,7 @@ with badbyte parse (see next chapter).
 ```bash
 badbyte c -u 4 -l 100 --bad "61 62"
 ```
-![cyclegenerate]()
+![cyclegenerate](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/cyclegenerate.png)
 
 ### [↑](#table-of-contents)Search for offset in cyclic pattern
 
@@ -54,7 +54,7 @@ Search for offset of provided part in --pattern argument.
 ```
 badbyte o -u 4 -l 100 --bad "61 62" -p cocc
 ```
-![cyclesearch]()
+![cyclesearch](https://raw.githubusercontent.com/C3l1n/badbyte/main/assets/cyclesearch.png)
 ### [↑](#table-of-contents)Generate payload to check all characters
 
 ```bash
