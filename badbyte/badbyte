@@ -41,8 +41,13 @@ parser.add_argument("--bad", type=str, default="", help="Banned characters as he
 parser.add_argument("--length", "-l", type=int, help="Cyclic pattern length.")
 parser.add_argument("--pattern", "-p", type=str, help="Part of pattern to search offset for.")
 parser.add_argument("--uniqlength", "-u", default=4, type=int, help="Minimal length of character from cyclic pattern minimal needed to determine offset.")
+parser.add_argument("-v", "--version", action='store_true',
+                    help="Just print version.")
 
 args = parser.parse_args()
+
+if args.version:
+    sys.exit(0)
 
 def validate_args_cyclic(search_offset=False):
     if args.length is None or args.uniqlength is None or (search_offset and args.pattern is None and search_offset):
@@ -73,7 +78,7 @@ if __name__ == "__main__":
         alphabet = get_cyclic_alphabet(args.bad)
         g = cyclic.cyclic_gen(alphabet=alphabet, n=args.uniqlength)
         print(f"{GREEN}Pattern:{RST} {g.get(args.length)}")
-        if {g.find(args.pattern) == -1:
+        if g.find(args.pattern) == -1:
             print(f"{GREEN}Offset:{RST} {RED}NOT FOUND{END}")
         else:
             print(f"{GREEN}Offset:{RST} {g.find(args.pattern)[0]}")
