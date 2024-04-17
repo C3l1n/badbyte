@@ -79,7 +79,7 @@ if __name__ == "__main__":
         g = cyclic.cyclic_gen(alphabet=alphabet, n=args.uniqlength)
         print(f"{GREEN}Pattern:{RST} {g.get(args.length)}")
         if g.find(args.pattern) == -1:
-            print(f"{GREEN}Offset:{RST} {RED}NOT FOUND{END}")
+            print(f"{GREEN}Offset:{RST} {RED}NOT FOUND{RST}")
         else:
             print(f"{GREEN}Offset:{RST} {g.find(args.pattern)[0]}")
     elif args.mode[0] == "p":
