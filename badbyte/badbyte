@@ -73,7 +73,10 @@ if __name__ == "__main__":
         alphabet = get_cyclic_alphabet(args.bad)
         g = cyclic.cyclic_gen(alphabet=alphabet, n=args.uniqlength)
         print(f"{GREEN}Pattern:{RST} {g.get(args.length)}")
-        print(f"{GREEN}Offset:{RST} {g.find(args.pattern)[0]}")
+        if {g.find(args.pattern) == -1:
+            print(f"{GREEN}Offset:{RST} {RED}NOT FOUND{END}")
+        else:
+            print(f"{GREEN}Offset:{RST} {g.find(args.pattern)[0]}")
     elif args.mode[0] == "p":
         print(f"{GREEN}Please paste hexdump (every non whitespace is treated as hexstring). "
               f"Press CTRL+D to end.{RST}")
